@@ -10,7 +10,7 @@ function NavBar() {
             Câmera
           </a>
           <a href="#performance" className="hover:text-gray-300">
-            Peformance
+            Performance
           </a>
           <a href="#cores" className="hover:text-gray-300">
             Cores
