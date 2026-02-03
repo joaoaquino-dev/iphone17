@@ -5,14 +5,14 @@ function Colors() {
     {
       id: "blue",
       name: "Titânio Azul",
-      image: "/img/iphone-blue.jpg", // Certifique-se que o caminho está correto
+      image: "/img/iphone-blue.jpg",
       colorClass: "bg-blue-600",
     },
     {
       id: "silver",
       name: "Titânio Natural",
       image: "/img/iphone-silver.jpg",
-      colorClass: "bg-[#8e8e8a]", // Cor mais próxima do titânio real
+      colorClass: "bg-[#8e8e8a]",
     },
     {
       id: "orange",
@@ -22,9 +22,25 @@ function Colors() {
     },
   ];
 
+  const models = [
+    {
+      name: "Pro Max",
+      screen: "6.9 polegadas",
+      storage: "256GB, 512GB, ou 1TB",
+      battery: "33h de vídeo",
+      weight: "221g",
+    },
+    {
+      name: "Pro",
+      screen: "6.3 polegadas",
+      storage: "128GB, 256GB ou 512GB",
+      battery: "29h de vídeo",
+      weight: "199g",
+    },
+  ];
+
   const [selectedColor, setSelectedColor] = useState("blue");
 
-  // Busca os dados da cor selecionada para evitar repetir código
   const currentColor = colors.find((c) => c.id === selectedColor);
 
   return (
@@ -48,7 +64,7 @@ function Colors() {
           <div className="relative w-full max-w-3xl">
             <div className="relative flex items-center justify-center min-h-125">
               <img
-                key={selectedColor} // O 'key' força o React a re-renderizar e disparar animações de entrada
+                key={selectedColor}
                 className="max-w-full max-h-150 mx-auto transition-all duration-500 animate-in fade-in zoom-in-95"
                 src={currentColor.image}
                 alt={currentColor.name}
@@ -91,6 +107,31 @@ function Colors() {
               </button>
             );
           })}
+        </div>
+
+        <div className="grid gap-8 mt-20 grid-cols-2">
+          {models.map((model, index) => (
+            <div
+              key={index}
+              className="bg-linear-to-br from-gray-900 to-transparent rounded-3xl p-8 border border-gray-800"
+            >
+              <div className="text-4xl mb-4">📱</div>
+              <h3 className="text-2xl font-bold mb-3">{model.name}</h3>
+              <p className="text-gray-400 mb-4">{model.screen}</p>
+              <ul className="space-y-2 text-gray-300">
+                <li>{model.storage}</li>
+                <li>{model.battery}</li>
+                <li>{model.weight}</li>
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-16">
+          <button className="bg-blue-700 hover:bg-blue-800 text-white px-12 py-4 rounded-full text-lg font-medium transition-all duration-300 mb-8 hover:scale-105 shadow-md shadow-blue-500/50 cursor-pointer">
+            Compre agora a partir de R$9.299,00
+          </button>
+          <p>Ou em até 12x de R$774,92 sem juros</p>
         </div>
       </div>
     </section>
