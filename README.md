@@ -2,7 +2,7 @@
 
 Landing page desenvolvida para demonstrar habilidades em **React** e **Tailwind CSS**, focada em UI/UX de alta fidelidade e performance.
 
-**🔗 [Link do Projeto Ao Vivo]**
+**🔗 https://joaoaquino-dev.github.io/iphone17/**
 
 ## 🛠️ Tecnologias
 * **React** (Vite)
